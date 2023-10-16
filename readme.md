@@ -2,6 +2,8 @@
 
 JQueryをできるかぎり、モダンに書いてみるやつ
 
+遊びで作ったのであまり出来が良くない
+
 ## よくあるカウンターの例
 
 ```tsx
@@ -18,7 +20,16 @@ export function Counter() {
 }
 ```
 
-## プロジェクトの初期化
+```tsx
+import { $ } from "jquery-jsx/mod.ts";
+import { Counter } from "./counter.tsx";
+
+window.addEventListener("load", () => {
+  $("body").append(<Counter />);
+});
+```
+
+## とりあえず適当に遊べるようにするスクリプト
 
 ```
 deno run -rA https://raw.githubusercontent.com/ikasoba/deno-jquery-jsx/main/init.ts
